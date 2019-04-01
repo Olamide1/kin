@@ -7,7 +7,6 @@
 <ion-content padding>
   <h4 color="primary">Gender</h4>
   <fieldset>
-    <legend>Select Gender</legend>
     <div class="toggle">
       <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
       <label for="sizeWeight">Male</label>
@@ -16,5 +15,20 @@
     </div>
   </fieldset>
 
-  
+  <h4>Date Of Birth</h4>
+  <input type="date">
+
+  <h4>Occupation</h4>
+  <input type="text" placeholder="Occupation">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full>Save</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full (click)="next()">Next</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

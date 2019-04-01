@@ -5,10 +5,9 @@
 </ion-header>
 
 <ion-content padding no-bounce>
-
   <img src="../../assets/imgs/signup.svg" height="150px" />
-  <input type="text" placeholder="Fullname">
-  <input type="text" placeholder="Email">
-  <input type="password" placeholder="Password">
+  <input type="text" placeholder="Fullname" [(ngModel)]="fullname">
+  <input type="text" placeholder="Email" [(ngModel)]="email">
+  <input type="password" placeholder="Password" [(ngModel)]="password">
   <button ion-button full (click)="signup()">Sign Up</button>
 </ion-content>
