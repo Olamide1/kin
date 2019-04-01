@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
-import { ProfilePage } from '../profile/profile';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +20,6 @@ export class HomePage {
     let email = this.email;
     let password = this.password;
     console.log(email + '' + password);
-    this.navCtrl.push(ProfilePage);
-
+    this.navCtrl.push(DashboardPage);
   }
 }

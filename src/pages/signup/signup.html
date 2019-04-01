@@ -4,11 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding scroll="false">
+<ion-content padding no-bounce>
 
   <img src="../../assets/imgs/signup.svg" height="150px" />
   <input type="text" placeholder="Fullname">
   <input type="text" placeholder="Email">
   <input type="password" placeholder="Password">
-  <button ion-button full>Sign Up</button>
+  <button ion-button full (click)="signup()">Sign Up</button>
 </ion-content>
