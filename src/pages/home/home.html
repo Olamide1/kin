@@ -8,4 +8,24 @@
 
 <ion-content padding scroll="false">
 
+
+  <img src="../../assets/imgs/login.svg" height="150px" />
+
+
+  <input type="text" placeholder="Email" [(ngModel)]="email" required>
+  <input type="password" placeholder="Password" [(ngModel)]="password" required>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <a> Forgot Password?</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button full (click)="login()">Login</button>
+  <br>
+  <div align="center">
+    <a [navPush]="signUpPage">Create and account</a>
+  </div>
 </ion-content>
