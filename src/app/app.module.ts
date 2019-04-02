@@ -11,7 +11,6 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SettingsPage } from '../pages/settings/settings';
-import { Firebase } from '@ionic-native/firebase';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { Firebase } from '@ionic-native/firebase';
   imports: [
     BrowserModule,
     FormsModule,
-    Firebase,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

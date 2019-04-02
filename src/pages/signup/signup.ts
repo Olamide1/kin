@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
-import { Firebase } from '@ionic-native/firebase';
 
 @IonicPage()
 @Component({
@@ -13,7 +12,7 @@ export class SignupPage {
   fullname: string = '';
   password: string = '';
   email: string = '';
-  constructor(public navCtrl: NavController, public navParams: NavParams, public firebase: Firebase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
