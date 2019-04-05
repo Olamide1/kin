@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { DashboardPage } from '../dashboard/dashboard';
-import {  HttpClient }  from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 @Component({
   selector: 'page-home',
@@ -20,11 +21,28 @@ export class HomePage {
   login() {
     let email = this.email;
     let password = this.password;
-      if (email == '' || password == ''){
-        console.log('Please fill in the forms');
-      } else {
-        this.http.get('http://localhost:3000/api/')
-      }
-    this.navCtrl.push(DashboardPage);
+    if (email == '' || password == '') {
+      console.log('Please fill in the forms');
+    } else {
+      this.http.post('http://localhost:3000/api/login', {
+        email: email,
+        password: password
+      }).subscribe(data => {
+        console.log(data);
+        if (data !== null) {
+          console.log('Done');
+          this.navCtrl.push(DashboardPage);
+        } else {
+          console.log('User not found!');
+        }
+      }, err => {
+        console.log(err);
+      })
+    }
+  }
+
+
+  forgotPassword() {
+    this.navCtrl.push(ForgotPasswordPage);
   }
 }

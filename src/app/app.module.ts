@@ -12,6 +12,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SettingsPage } from '../pages/settings/settings';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SettingsPage } from '../pages/settings/settings';
     SignupPage,
     ProfilePage,
     DashboardPage,
-    SettingsPage
+    SettingsPage,
+    ForgotPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { SettingsPage } from '../pages/settings/settings';
     SignupPage,
     ProfilePage,
     DashboardPage,
-    SettingsPage
+    SettingsPage,
+    ForgotPasswordPage
   ],
   providers: [
     StatusBar,
