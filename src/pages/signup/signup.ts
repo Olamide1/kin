@@ -9,9 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupPage {
 
-  fullname: string = '';
-  password: string = '';
-  email: string = '';
+  fullname: String = '';
+  password: String = '';
+  email: String = '';
+  id: any;
   constructor(public navCtrl: NavController, public navParams: NavParams
     , public http: HttpClient) {
   }
@@ -36,7 +37,7 @@ export class SignupPage {
             password: password
           }).subscribe(data => {
             console.log(data);
-            this.navCtrl.push(ProfilePage, email);
+            this.navCtrl.push(ProfilePage, { email: email });
           }, err => {
             console.log(err);
           })

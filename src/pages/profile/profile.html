@@ -8,23 +8,20 @@
   <h4 color="primary">Gender</h4>
   <fieldset>
     <div class="toggle">
-      <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+      <input type="radio" name="sizeBy" [(ngModel)]="gender" value="Male" id="sizeWeight" checked="checked" />
       <label for="sizeWeight">Male</label>
-      <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+      <input type="radio" name="sizeBy" [(ngModel)]="gender" value="Female" id="sizeDimensions" />
       <label for="sizeDimensions">Female</label>
     </div>
   </fieldset>
 
-  <h4>Date Of Birth</h4>
-  <input type="date">
-
-  <h4>Occupation</h4>
-  <input type="text" placeholder="Occupation">
+  <input type="number" [(ngModel)]="age" placeholder="Age">
+  <input type="text" placeholder="Occupation" [(ngModel)]="occupation">
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button full>Save</button>
+        <button ion-button full (click)="save()">Save</button>
       </ion-col>
       <ion-col>
         <button ion-button full (click)="next()">Next</button>
