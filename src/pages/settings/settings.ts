@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 @IonicPage()
 @Component({
   selector: 'page-settings',
@@ -7,7 +8,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  id: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public http: HttpClient) {
   }
 
   cancelModal() {
@@ -16,6 +19,8 @@ export class SettingsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+    this.id = this.navParams.get('id');
+    console.log(this.id);
   }
 
 }

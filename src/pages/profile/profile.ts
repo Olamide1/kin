@@ -23,16 +23,16 @@ export class ProfilePage {
     console.log(em);
     this.http.get('http://localhost:3000/api/finduser/' + em).subscribe(data => {
       console.log(data);
-      const id = data;
-      this.id = id._id;
-      console.log(this.id);
+      var id = data['_id'];
+      this.id = id;
+      //  console.log(this.id);
     }, err => {
       console.log(err);
     })
   }
 
   next() {
-    this.navCtrl.push(this.dashboard);
+    this.navCtrl.push(this.dashboard, { id: this.id });
   }
   save() {
     var gender = this.gender;
@@ -46,6 +46,7 @@ export class ProfilePage {
       occupation: occupation
     }).subscribe(data => {
       console.log(data);
+      this.navCtrl.push(this.dashboard, { id: this.id });
     }, err => {
       console.log(err);
     })

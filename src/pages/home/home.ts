@@ -14,6 +14,7 @@ export class HomePage {
   signUpPage = SignupPage;
   email: string;
   password: string;
+  id: string;
   constructor(public navCtrl: NavController, public http: HttpClient) {
   }
 
@@ -31,7 +32,8 @@ export class HomePage {
         console.log(data);
         if (data !== null) {
           console.log('Done');
-          this.navCtrl.push(DashboardPage);
+          this.id = data['_id'];
+          this.navCtrl.push(DashboardPage, { id: this.id });
         } else {
           console.log('User not found!');
         }

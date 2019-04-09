@@ -9,15 +9,19 @@ import { SettingsPage } from '../settings/settings';
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
+  id: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private ModalCtrl: ModalController) {
   }
 
   openModal() {
-    const modal = this.ModalCtrl.create(SettingsPage);
+    this.id = this.navParams.get('id');
+    const modal = this.ModalCtrl.create(SettingsPage, { id: this.id });
     modal.present();
   }
   ionViewDidLoad() {
+    this.id = this.navParams.get('id');
+    console.log(this.id);
     console.log('ionViewDidLoad DashboardPage');
   }
 
