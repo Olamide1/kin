@@ -13,6 +13,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SettingsPage } from '../pages/settings/settings';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
     ProfilePage,
     DashboardPage,
     SettingsPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
     ProfilePage,
     DashboardPage,
     SettingsPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

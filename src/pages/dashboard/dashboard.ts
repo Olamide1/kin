@@ -16,11 +16,12 @@ export class DashboardPage {
 
   openModal() {
     this.id = this.navParams.get('id');
-    const modal = this.ModalCtrl.create(SettingsPage, { id: this.id });
+    var email = this.navParams.get('em');
+    const modal = this.ModalCtrl.create(SettingsPage, { email: email });
     modal.present();
   }
   ionViewDidLoad() {
-    this.id = this.navParams.get('id');
+    this.id = this.navParams.get('em');
     console.log(this.id);
     console.log('ionViewDidLoad DashboardPage');
   }

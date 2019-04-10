@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SettingsPage {
 
-  id: string;
+  email: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public http: HttpClient) {
   }
@@ -19,8 +19,12 @@ export class SettingsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
-    this.id = this.navParams.get('id');
-    console.log(this.id);
+    this.email = this.navParams.get('email');
+    this.http.get('http://localhost:3000/api/finduser/' + this.email).subscribe(data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    })
   }
 
 }
