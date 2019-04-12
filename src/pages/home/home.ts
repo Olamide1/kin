@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SignupPage } from '../signup/signup';
-import { LoginPage } from '../login/login';
 import { HttpClient } from '@angular/common/http';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -10,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
+  loginPage = LoginPage;
   constructor(public navCtrl: NavController, public http: HttpClient) {
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { HttpClient } from '@angular/common/http';
 @IonicPage()
@@ -14,7 +14,7 @@ export class SignupPage {
   email: String = '';
   id: any;
   constructor(public navCtrl: NavController, public navParams: NavParams
-    , public http: HttpClient) {
+    , public http: HttpClient, public loader: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -25,9 +25,14 @@ export class SignupPage {
     var fullname = this.fullname;
     var email = this.email;
     var password = this.password;
+    let loading = this.loader.create({
+      spinner: 'dots'
+    });
+
     if (fullname == '' || email == '' || password == '') {
       console.log("Please Fill the fields")
     } else {
+      loading.present();
       this.http.get('http://localhost:3000/api/finduser/' + email).subscribe(data => {
         console.log(data);
         if (data == null) {
@@ -37,11 +42,13 @@ export class SignupPage {
             password: password
           }).subscribe(data => {
             console.log(data);
+            loading.dismiss();  
             this.navCtrl.push(ProfilePage, { email: email });
           }, err => {
             console.log(err);
           })
         } else {
+          loading.dismiss();
           console.log('You alrady have an account, plese sign in')
         }
       }, err => {
